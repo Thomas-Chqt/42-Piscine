@@ -1,8 +1,8 @@
 .DS_Store
 *.pdf
-Check*
 *.out
 *.dSYM
 Git\ repo*
 Rush*
+C\ Checker*
 C\ Checker/*

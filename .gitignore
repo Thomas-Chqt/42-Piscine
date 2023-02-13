@@ -4,5 +4,4 @@ Check*
 .vscode*
 *.out
 *.dSYM
-Git*
-repo*
+Repo*

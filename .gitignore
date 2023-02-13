@@ -1,0 +1,6 @@
+.DS_Store
+*.pdf
+Check*
+.vscode*
+*.out
+*.dSYM

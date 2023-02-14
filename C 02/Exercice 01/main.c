@@ -6,7 +6,7 @@
 /*   By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 19:44:54 by tchoquet          #+#    #+#             */
-/*   Updated: 2023/02/13 21:03:46 by tchoquet         ###   ########.fr       */
+/*   Updated: 2023/02/14 01:27:09 by tchoquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void printMem(void* startPtr, int len)
 {
 	for (int i = 0; i < len; i++)
 	{
-		printf("%04x", *((int*)startPtr+i));
+		printf("%02x", *((u_int8_t*)startPtr+i));
 	}
 	
 }

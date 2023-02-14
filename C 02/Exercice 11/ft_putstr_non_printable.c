@@ -6,15 +6,14 @@
 /*   By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 18:21:25 by tchoquet          #+#    #+#             */
-/*   Updated: 2023/02/14 19:01:22 by tchoquet         ###   ########.fr       */
+/*   Updated: 2023/02/15 00:13:05 by tchoquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<unistd.h>
 
 void	ft_putstr_non_printable(char *str);
-void	ft_print_non_printable(char *c);
-char* ft_dec_to_hex(unsigned char decimal) ;
+char*	ft_dec_to_hex(unsigned char decimal) ;
 
 void	ft_putstr_non_printable(char *str)
 {
@@ -25,21 +24,15 @@ void	ft_putstr_non_printable(char *str)
 		{
 			if (str[i] < ' ' || str[i] > '~')
 			{
-				ft_print_non_printable(str + i);
+				write(1, "\\", 1);
+				write(1, ft_dec_to_hex(*((unsigned char*)str + i)), 2);
+			}
+			else
+			{
+				write(1, str + i, 1);
 			}
 			i++;
 		}
-		return (1);
-}
-
-void	ft_print_non_printable(char *c)
-{
-	unsigned char dec;
-	unsigned char hex;
-
-	dec = *((unsigned char*)c);
-
-	write(1, ft_dec_to_hex(dec), )
 }
 
 char* ft_dec_to_hex(unsigned char decimal) 
@@ -57,7 +50,7 @@ char* ft_dec_to_hex(unsigned char decimal)
 		}
 		else 
 		{
-			hexa[i] += 55;
+			hexa[i] += (55 + 32);
 		}
 	}
 	hexa[2] = '\0';

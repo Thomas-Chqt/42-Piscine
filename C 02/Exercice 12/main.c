@@ -6,7 +6,7 @@
 /*   By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 09:58:43 by tchoquet          #+#    #+#             */
-/*   Updated: 2023/02/15 12:41:45 by tchoquet         ###   ########.fr       */
+/*   Updated: 2023/02/15 12:57:04 by tchoquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,6 @@
 #include <string.h>
 
 void	*ft_print_memory(void *addr, unsigned int size);
-/*
-int main()
-{
-	void* startPtr = malloc(42);
-	memset(startPtr, 0xAA, 20);
-	memset(startPtr + 20, 0xBB, 20);
-	memset(startPtr + 40, 0xCC, 2);
-
-	printf("%d Bytes from %p\n",42, startPtr);
-	ft_print_memory(startPtr, 42);
-	return 0;
-}
-*/
 
 int main()
 {

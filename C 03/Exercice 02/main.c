@@ -6,7 +6,7 @@
 /*   By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 20:08:47 by tchoquet          #+#    #+#             */
-/*   Updated: 2023/02/15 22:29:07 by tchoquet         ###   ########.fr       */
+/*   Updated: 2023/02/15 22:33:51 by tchoquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,10 @@ int main()
 	memset(s2, 0xBB, 2);
 	memset(s2 + 2, 0x0, 1);
 
-	printf("'%s' + '%s' = '%s'\n", getMemHex(s1, 5), 
+	printf("'%s' + '%s' = '%s' / '%s'\n", getMemHex(s1, 5), 
 			getMemHex(s2, 3), 
-			getMemHex(ft_strcat(s1, s2), 5));
+			getMemHex(ft_strcat(s1, s2), 5),
+			getMemHex(s1, 5));
 
 	memset(s1, 0xFF, 5);
 	memset(s1, 0xAA, 2);
@@ -42,9 +43,10 @@ int main()
 	
 	memset(s2, 0x0, 5);
 
-	printf("'%s' + '%s' = '%s'\n", getMemHex(s1, 5), 
+	printf("'%s' + '%s' = '%s' / '%s'\n", getMemHex(s1, 5), 
 			getMemHex(s2, 3), 
-			getMemHex(ft_strcat(s1, s2), 5));
+			getMemHex(ft_strcat(s1, s2), 5),
+			getMemHex(s1, 5));
 
 	memset(s1, 0x0, 5);
 	
@@ -52,9 +54,10 @@ int main()
 	memset(s2, 0xBB, 2);
 	memset(s2 + 2, 0x0, 1);
 
-	printf("'%s' + '%s' = '%s'\n", getMemHex(s1, 5), 
+	printf("'%s' + '%s' = '%s' / '%s'\n", getMemHex(s1, 5), 
 			getMemHex(s2, 3), 
-			getMemHex(ft_strcat(s1, s2), 5));
+			getMemHex(ft_strcat(s1, s2), 5),
+			getMemHex(s1, 5));
 
 	return 0;
 }

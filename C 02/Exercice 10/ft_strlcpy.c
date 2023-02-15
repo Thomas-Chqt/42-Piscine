@@ -6,7 +6,7 @@
 /*   By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 16:39:05 by tchoquet          #+#    #+#             */
-/*   Updated: 2023/02/14 18:07:41 by tchoquet         ###   ########.fr       */
+/*   Updated: 2023/02/15 14:24:48 by tchoquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,8 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 	src_len = 0;
 	while (src[src_len] != '\0')
 		src_len++;
-
 	if (size == 0)
-		return(src_len);
-	
+		return (src_len);
 	i = 0;
 	while (src[i] != '\0')
 	{
@@ -35,5 +33,5 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 		i++;
 	}
 	dest[i] = '\0';
-	return(src_len);
+	return (src_len);
 }

@@ -6,53 +6,55 @@
 /*   By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 18:21:25 by tchoquet          #+#    #+#             */
-/*   Updated: 2023/02/15 00:13:05 by tchoquet         ###   ########.fr       */
+/*   Updated: 2023/02/15 14:30:56 by tchoquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<unistd.h>
 
 void	ft_putstr_non_printable(char *str);
-char*	ft_dec_to_hex(unsigned char decimal) ;
+char	*ft_dec_to_hex(unsigned char decimal);
 
 void	ft_putstr_non_printable(char *str)
 {
-		unsigned long long	i;
+	unsigned long long	i;
 
-		i = 0;
-		while (str[i] != '\0')
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] < ' ' || str[i] > '~')
 		{
-			if (str[i] < ' ' || str[i] > '~')
-			{
-				write(1, "\\", 1);
-				write(1, ft_dec_to_hex(*((unsigned char*)str + i)), 2);
-			}
-			else
-			{
-				write(1, str + i, 1);
-			}
-			i++;
+			write(1, "\\", 1);
+			write(1, ft_dec_to_hex(*((unsigned char *)str + i)), 2);
 		}
+		else
+		{
+			write(1, str + i, 1);
+		}
+		i++;
+	}
 }
 
-char* ft_dec_to_hex(unsigned char decimal) 
+char	*ft_dec_to_hex(unsigned char decimal)
 {
-	static char hexa[3];
+	static char	hexa[3];
+	int			i;
 
 	hexa[0] = decimal / 16;
 	hexa[1] = decimal % 16;
-
-	for (int i = 0; i <= 1; i++)
+	i = 0;
+	while (i <= 1)
 	{
-		if (hexa[i] < 10) 
+		if (hexa[i] < 10)
 		{
 			hexa[i] += 48;
 		}
-		else 
+		else
 		{
 			hexa[i] += (55 + 32);
 		}
+		i++;
 	}
 	hexa[2] = '\0';
-	return hexa;
+	return (hexa);
 }

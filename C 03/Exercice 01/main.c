@@ -6,7 +6,7 @@
 /*   By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 19:03:13 by tchoquet          #+#    #+#             */
-/*   Updated: 2023/02/16 16:09:42 by tchoquet         ###   ########.fr       */
+/*   Updated: 2023/02/16 20:52:54 by tchoquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,12 @@ int main()
 	str1 = "hello world";
 	str2 = "";
 	printf("'%s' and '%s' : \nft_strncmp 0 -> %d | strncmp 0 -> %d\n\n", str1, str2, ft_strncmp(str1, str2, 0), strncmp(str1, str2, 0));
+
+
+
+	str1 = "Hell";
+    str2 = "Helloo";
+	printf("'%s' and '%s' : \nft_strncmp 5 -> %d | strncmp 5 -> %d\n\n", str1, str2, ft_strncmp(str1, str2, 5), strncmp(str1, str2, 5));
 
     return 0;
 }

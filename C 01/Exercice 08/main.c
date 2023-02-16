@@ -6,7 +6,7 @@
 /*   By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 17:02:05 by tchoquet          #+#    #+#             */
-/*   Updated: 2023/02/12 18:02:46 by tchoquet         ###   ########.fr       */
+/*   Updated: 2023/02/16 20:00:32 by tchoquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int main()
 	int tab3[] = { 1, 1, 4, 4, 3 };
 	int tab4[] = { -1, -6, -6, -4, -4 };
 	int tab5[] = { MAX_INT, 0, 0, 0, MIN_INT };
+	int tab6[] = {};
+	int tab7[] = { 0 };
 
 	printf("Test with : ");
 	ft_print_tab(tab1, 4);
@@ -65,6 +67,22 @@ int main()
 	printf("Sorting...\n");
 	ft_sort_int_tab(tab5, 5);
 	ft_print_tab(tab5, 5);
+	printf("\n");
+
+	printf("Test with : ");
+	ft_print_tab(tab6, 0);
+	printf("\n");
+	printf("Sorting...\n");
+	ft_sort_int_tab(tab6, 0);
+	ft_print_tab(tab6, 0);
+	printf("\n");
+
+	printf("Test with : ");
+	ft_print_tab(tab7, 1);
+	printf("\n");
+	printf("Sorting...\n");
+	ft_sort_int_tab(tab7, 1);
+	ft_print_tab(tab7, 1);
 	printf("\n");
 
 	return 0;

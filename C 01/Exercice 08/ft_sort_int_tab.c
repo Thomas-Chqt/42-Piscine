@@ -6,7 +6,7 @@
 /*   By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 17:01:58 by tchoquet          #+#    #+#             */
-/*   Updated: 2023/02/12 18:10:04 by tchoquet         ###   ########.fr       */
+/*   Updated: 2023/02/16 20:00:22 by tchoquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	ft_sort_int_tab(int *tab, int size)
 	int	i;
 	int	y;
 
+	if (size <= 1)
+		return ;
 	ft_set_first(tab, size);
 	i = 0;
 	while (i < size)

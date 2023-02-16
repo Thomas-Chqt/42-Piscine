@@ -6,7 +6,7 @@
 /*   By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 12:02:22 by tchoquet          #+#    #+#             */
-/*   Updated: 2023/02/16 13:05:05 by tchoquet         ###   ########.fr       */
+/*   Updated: 2023/02/16 18:18:01 by tchoquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,13 @@ int main()
 
 	memset(s1, 0xAA, 2); memset(s1 + 2, 0x0, 1);
 	memset(s2, 0xBB, 2); memset(s2 + 2, 0x0, 1);
+	printf("'%s' + '%s' ft_strlcat(5)	= '%d' / '%s'\n", getMemHex(s1, 5), getMemHex(s2, 5), ft_strlcat(s1, s2, 5), getMemHex(s1, 5));
 
-	printf("'%s' + '%s' (5) = '%d' / '%s'\n", getMemHex(s1, 5), getMemHex(s2, 5), ft_strlcat(s1, s2, 5), getMemHex(s1, 5));
+	memset(s1, 0xFF, 5); memset(s2, 0xFF, 5);
+	memset(s1, 0xAA, 2); memset(s1 + 2, 0x0, 1);
+	memset(s2, 0xBB, 2); memset(s2 + 2, 0x0, 1);
+	printf("'%s' + '%s' strlcat(5)		= '%lu' / '%s'\n\n", getMemHex(s1, 5), getMemHex(s2, 5), strlcat(s1, s2, 5), getMemHex(s1, 5));
+
 
 
 	memset(s1, 0xFF, 5); memset(s2, 0xFF, 5);
@@ -39,7 +44,14 @@ int main()
 	memset(s1, 0xAA, 2); memset(s1 + 2, 0x0, 1);
 	memset(s2, 0xBB, 2); memset(s2 + 2, 0x0, 1);
 
-	printf("'%s' + '%s' (4) = '%d' / '%s'\n", getMemHex(s1, 5), getMemHex(s2, 5), ft_strlcat(s1, s2, 4), getMemHex(s1, 5));
+	printf("'%s' + '%s' ft_strlcat(4)	= '%d' / '%s'\n", getMemHex(s1, 5), getMemHex(s2, 5), ft_strlcat(s1, s2, 4), getMemHex(s1, 5));
+
+	memset(s1, 0xFF, 5); memset(s2, 0xFF, 5);
+
+	memset(s1, 0xAA, 2); memset(s1 + 2, 0x0, 1);
+	memset(s2, 0xBB, 2); memset(s2 + 2, 0x0, 1);
+	printf("'%s' + '%s' strlcat(4)		= '%lu' / '%s'\n\n", getMemHex(s1, 5), getMemHex(s2, 5), strlcat(s1, s2, 4), getMemHex(s1, 5));
+
 
 
 	memset(s1, 0xFF, 5); memset(s2, 0xFF, 5);
@@ -47,7 +59,14 @@ int main()
 	memset(s1, 0xAA, 2); memset(s1 + 2, 0x0, 1);
 	memset(s2, 0xBB, 2); memset(s2 + 2, 0x0, 1);
 
-	printf("'%s' + '%s' (3) = '%d' / '%s'\n", getMemHex(s1, 5), getMemHex(s2, 5), ft_strlcat(s1, s2, 3), getMemHex(s1, 5));
+	printf("'%s' + '%s' ft_strlcat(3)	= '%d' / '%s'\n", getMemHex(s1, 5), getMemHex(s2, 5), ft_strlcat(s1, s2, 3), getMemHex(s1, 5));
+
+	memset(s1, 0xFF, 5); memset(s2, 0xFF, 5);
+
+	memset(s1, 0xAA, 2); memset(s1 + 2, 0x0, 1);
+	memset(s2, 0xBB, 2); memset(s2 + 2, 0x0, 1);
+	printf("'%s' + '%s' strlcat(3)		= '%lu' / '%s'\n\n", getMemHex(s1, 5), getMemHex(s2, 5), strlcat(s1, s2, 3), getMemHex(s1, 5));
+
 
 
 	memset(s1, 0xFF, 5); memset(s2, 0xFF, 5);
@@ -55,7 +74,14 @@ int main()
 	memset(s1, 0xAA, 2); memset(s1 + 2, 0x0, 1);
 	memset(s2, 0xBB, 1); memset(s2 + 1, 0x0, 1);
 
-	printf("'%s' + '%s'       (5) = '%d' / '%s'\n", getMemHex(s1, 5), getMemHex(s2, 3), ft_strlcat(s1, s2, 5), getMemHex(s1, 5));
+	printf("'%s' + '%s'       ft_strlcat(5)	= '%d' / '%s'\n", getMemHex(s1, 5), getMemHex(s2, 3), ft_strlcat(s1, s2, 5), getMemHex(s1, 5));
+
+	memset(s1, 0xFF, 5); memset(s2, 0xFF, 5);
+	
+	memset(s1, 0xAA, 2); memset(s1 + 2, 0x0, 1);
+	memset(s2, 0xBB, 1); memset(s2 + 1, 0x0, 1);
+	printf("'%s' + '%s'       strlcat(5)		= '%lu' / '%s'\n\n", getMemHex(s1, 5), getMemHex(s2, 3), strlcat(s1, s2, 5), getMemHex(s1, 5));
+
 
 
 
@@ -64,7 +90,14 @@ int main()
 						 memset(s1	  , 0x0, 1);
 	memset(s2, 0xBB, 2); memset(s2 + 2, 0x0, 1);
 
-	printf("'%s' + '%s' (1) = '%d' / '%s'\n", getMemHex(s1, 5), getMemHex(s2, 5), ft_strlcat(s1, s2, 1), getMemHex(s1, 5));
+	printf("'%s' + '%s' ft_strlcat(1)	= '%d' / '%s'\n", getMemHex(s1, 5), getMemHex(s2, 5), ft_strlcat(s1, s2, 1), getMemHex(s1, 5));
+
+	memset(s1, 0xFF, 5); memset(s2, 0xFF, 5);
+	
+						 memset(s1	  , 0x0, 1);
+	memset(s2, 0xBB, 2); memset(s2 + 2, 0x0, 1);
+	printf("'%s' + '%s' strlcat(1)		= '%lu' / '%s'\n\n", getMemHex(s1, 5), getMemHex(s2, 5), strlcat(s1, s2, 1), getMemHex(s1, 5));
+
 
 
 	memset(s1, 0xFF, 5); memset(s2, 0xFF, 5);
@@ -72,7 +105,46 @@ int main()
 	memset(s1, 0xAA, 2); memset(s1 + 2, 0x0, 1);
 						 memset(s2	  , 0x0, 1);
 
-	printf("'%s' + '%s' (5) = '%d' / '%s'\n", getMemHex(s1, 5), getMemHex(s2, 5), ft_strlcat(s1, s2, 5), getMemHex(s1, 5));
+	printf("'%s' + '%s' ft_strlcat(5)	= '%d' / '%s'\n", getMemHex(s1, 5), getMemHex(s2, 5), ft_strlcat(s1, s2, 5), getMemHex(s1, 5));
+
+	memset(s1, 0xFF, 5); memset(s2, 0xFF, 5);
+
+	memset(s1, 0xAA, 2); memset(s1 + 2, 0x0, 1);
+						 memset(s2	  , 0x0, 1);
+	printf("'%s' + '%s' strlcat(5)		= '%lu' / '%s'\n\n", getMemHex(s1, 5), getMemHex(s2, 5), strlcat(s1, s2, 5), getMemHex(s1, 5));
+
+
+
+
+	memset(s1, 0xFF, 5); memset(s2, 0xFF, 5);
+
+	memset(s1, 0xAA, 4); memset(s1 + 4, 0x0, 1);
+	memset(s2, 0xBB, 4); memset(s2	  , 0x0, 1);
+	printf("'%s' + '%s' ft_strlcat(3)	= '%d' / '%s'\n", getMemHex(s1, 5), getMemHex(s2, 5), ft_strlcat(s1, s2, 3), getMemHex(s1, 5));
+
+	memset(s1, 0xFF, 5); memset(s2, 0xFF, 5);
+
+	memset(s1, 0xAA, 4); memset(s1 + 4, 0x0, 1);
+	memset(s2, 0xBB, 4); memset(s2	  , 0x0, 1);
+	printf("'%s' + '%s' strlcat(3)		= '%lu' / '%s'\n\n", getMemHex(s1, 5), getMemHex(s2, 5), strlcat(s1, s2, 3), getMemHex(s1, 5));
+
+
+
+	memset(s1, 0xFF, 5); memset(s2, 0xFF, 5);
+
+	memset(s1, 0xAA, 4); memset(s1 + 4, 0x0, 1);
+	memset(s2, 0xBB, 4); memset(s2 + 2, 0x0, 1);
+	printf("'%s' + '%s' ft_strlcat(3)	= '%d' / '%s'\n", getMemHex(s1, 5), getMemHex(s2, 5), ft_strlcat(s1, s2, 3), getMemHex(s1, 5));
+
+	memset(s1, 0xFF, 5); memset(s2, 0xFF, 5);
+
+	memset(s1, 0xAA, 4); memset(s1 + 4, 0x0, 1);
+	memset(s2, 0xBB, 4); memset(s2 + 2, 0x0, 1);
+	printf("'%s' + '%s' strlcat(3)		= '%lu' / '%s'\n\n", getMemHex(s1, 5), getMemHex(s2, 5), strlcat(s1, s2, 3), getMemHex(s1, 5));
+
+
+		
+
 
 	return 0;
 }

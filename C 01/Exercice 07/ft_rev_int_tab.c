@@ -6,7 +6,7 @@
 /*   By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 16:36:31 by tchoquet          #+#    #+#             */
-/*   Updated: 2023/02/15 20:40:42 by tchoquet         ###   ########.fr       */
+/*   Updated: 2023/02/16 19:51:40 by tchoquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_rev_int_tab(int *tab, int size)
 	if (size <= 1)
 		return ;
 	i = 0;
-	while (i <= (size / 2))
+	while (i < (size / 2))
 	{
 		ft_swap(tab + i, tab + (size - 1 - i));
 		i++;

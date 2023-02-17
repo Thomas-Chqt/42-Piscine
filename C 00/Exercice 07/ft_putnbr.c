@@ -3,19 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tchoquet <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 10:54:18 by tchoquet          #+#    #+#             */
-/*   Updated: 2023/02/11 10:59:12 by tchoquet         ###   ########.fr       */
+/*   Updated: 2023/02/17 19:18:54 by tchoquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include<unistd.h>
 #include<stdio.h>
 
 #define MAX_MODULO 1000000000
+#define MAX_LENGTH 10
 
 void	ft_print_absolutnum(long nbr);
-int		ft_get_start_modulo(long nbr);
 
 void	ft_putnbr(int nb)
 {
@@ -35,34 +36,27 @@ void	ft_putnbr(int nb)
 
 void	ft_print_absolutnum(long nbr)
 {
-	int		modulo;
-	long	rest;
-	char	new_char;
+	char str[MAX_LENGTH];
+	int str_length;
+	int i;
+	int modulo;
 
-	modulo = ft_get_start_modulo(nbr);
-	rest = nbr;
-	while (modulo >= 1)
-	{
-		new_char = '0' + (rest / modulo);
-		write(1, &new_char, 1);
-		rest %= modulo;
-		modulo /= 10;
-	}
-}
-
-int	ft_get_start_modulo(long nbr)
-{
-	int		modulo;
-	long	rest;
-
+	str_length = 10;
+	i = 0;
 	modulo = MAX_MODULO;
-	rest = nbr;
-	while (modulo >= 1)
+	while (i < MAX_LENGTH)
 	{
-		if (rest / modulo > 0)
-			return (modulo);
-		rest %= modulo;
+		str[i] = (nbr / modulo) + '0';
+		nbr %= modulo;
 		modulo /= 10;
+		i++;
 	}
-	return (0);
+	while (str[10 - str_length] == '0')
+	{
+		str_length--;
+	}
+	if (str_length == 0)
+		str_length = 1;
+	write(1, str + (10 - str_length), str_length);
 }
+

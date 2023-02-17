@@ -6,7 +6,7 @@
 /*   By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 10:54:18 by tchoquet          #+#    #+#             */
-/*   Updated: 2023/02/17 19:18:54 by tchoquet         ###   ########.fr       */
+/*   Updated: 2023/02/17 19:24:18 by tchoquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ void	ft_putnbr(int nb)
 
 void	ft_print_absolutnum(long nbr)
 {
-	char str[MAX_LENGTH];
-	int str_length;
-	int i;
-	int modulo;
+	char	str[MAX_LENGTH];
+	int		str_length;
+	int		i;
+	int		modulo;
 
 	str_length = 10;
 	i = 0;
@@ -59,4 +59,3 @@ void	ft_print_absolutnum(long nbr)
 		str_length = 1;
 	write(1, str + (10 - str_length), str_length);
 }
-

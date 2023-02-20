@@ -6,15 +6,13 @@
 /*   By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 19:09:29 by tchoquet          #+#    #+#             */
-/*   Updated: 2023/02/20 19:13:27 by tchoquet         ###   ########.fr       */
+/*   Updated: 2023/02/20 20:52:08 by tchoquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <limits.h>
 
 typedef unsigned char	t_uint8;
-
-int	ft_strlen(char *str);
 
 int	ft_strlen(char *str)
 {
@@ -34,7 +32,7 @@ int	ft_strlen(char *str)
 		else if ((*offset & 0xf8) == 0xf0)
 			offset += 4;
 		else
-			return (-1);
+			offset += 1;
 		if (len == (INT_MAX - 1))
 			return (-2);
 		len++;

@@ -6,7 +6,7 @@
 /*   By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 17:02:05 by tchoquet          #+#    #+#             */
-/*   Updated: 2023/02/16 20:00:32 by tchoquet         ###   ########.fr       */
+/*   Updated: 2023/02/20 17:06:29 by tchoquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,11 @@ int main()
 
 void	ft_print_tab(int *tab, int size)
 {
+	if (size <= 0)
+	{
+		printf("{ }");
+		return;
+	}
 	printf("{ %d", tab[0]);
 	for (int i = 1; i < size; i++)
 	{

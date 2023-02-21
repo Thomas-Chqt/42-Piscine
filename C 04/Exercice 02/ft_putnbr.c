@@ -6,7 +6,7 @@
 /*   By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 21:54:07 by tchoquet          #+#    #+#             */
-/*   Updated: 2023/02/20 21:57:15 by tchoquet         ###   ########.fr       */
+/*   Updated: 2023/02/21 16:09:18 by tchoquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 #define MAX_MODULO 1000000000
 #define MAX_LENGTH 10
-
 
 void	ft_putabsnbr(long nbr);
 

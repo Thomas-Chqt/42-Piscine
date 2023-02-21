@@ -6,7 +6,7 @@
 /*   By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 11:08:55 by tchoquet          #+#    #+#             */
-/*   Updated: 2023/02/21 12:44:10 by tchoquet         ###   ########.fr       */
+/*   Updated: 2023/02/21 14:16:53 by tchoquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,15 @@ int	ft_check_base(char *base)
 	i = 0;
 	while (base[i])
 	{
-		if (base[i] == '+' || base[i] == '-')
+		if (base[i] == ' ' || (base[i] >= '\t' && base[i] <= '\r'))
 			return (2);
+		if (base[i] == '+' || base[i] == '-')
+			return (3);
 		y = i + 1;
 		while (base[y])
 		{
 			if (base[i] == base[y])
-				return (3);
+				return (4);
 			y++;
 		}
 		i++;

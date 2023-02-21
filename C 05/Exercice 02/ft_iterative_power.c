@@ -6,7 +6,7 @@
 /*   By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 20:45:47 by tchoquet          #+#    #+#             */
-/*   Updated: 2023/02/21 21:02:23 by tchoquet         ###   ########.fr       */
+/*   Updated: 2023/02/21 21:05:31 by tchoquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ int	ft_iterative_power(int nb, int power)
 		res *= nb;
 		i++;
 	}
-	return (res);	
+	return (res);
 }

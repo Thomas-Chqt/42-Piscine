@@ -6,11 +6,9 @@
 /*   By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 21:52:40 by tchoquet          #+#    #+#             */
-/*   Updated: 2023/02/21 22:38:59 by tchoquet         ###   ########.fr       */
+/*   Updated: 2023/02/21 22:41:11 by tchoquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-int	ft_sqrt(int nb);
 
 int	ft_is_prime(int nb)
 {

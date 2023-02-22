@@ -6,7 +6,7 @@
 /*   By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 17:47:23 by tchoquet          #+#    #+#             */
-/*   Updated: 2023/02/21 19:57:47 by tchoquet         ###   ########.fr       */
+/*   Updated: 2023/02/22 12:04:54 by tchoquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_iterative_factorial(int nb);
 
 int	main()
 {
-	int testValues[] = {1, 2, 3, 4, 5, -10, 0 };
+	int testValues[] = { 1, 2, 3, 4, 5, -10, 0 };
 
 	for (int i = 0; i < 7; i++)
 	{

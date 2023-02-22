@@ -6,7 +6,7 @@
 /*   By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 20:30:21 by tchoquet          #+#    #+#             */
-/*   Updated: 2023/02/21 20:41:01 by tchoquet         ###   ########.fr       */
+/*   Updated: 2023/02/22 12:05:06 by tchoquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_recursive_factorial(int nb);
 
 int	main()
 {
-	int testValues[] = {1, 2, 3, 4, 5, -10, 0 };
+	int testValues[] = { 1, 2, 3, 4, 5, -10, 0 };
 
 	for (int i = 0; i < 7; i++)
 	{

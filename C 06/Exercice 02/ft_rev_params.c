@@ -6,29 +6,62 @@
 /*   By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 14:36:51 by tchoquet          #+#    #+#             */
-/*   Updated: 2023/02/22 14:44:07 by tchoquet         ###   ########.fr       */
+/*   Updated: 2023/02/22 15:20:33 by tchoquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<unistd.h>
 
-int	main(int argc, char const *argv[])
+void	ft_print_arg(char *arg);
+void	ft_swap(char **a, char **b);
+int	ft_strcmp(char *s1, char *s2);
+
+int	main(int argc, char *argv[])
 {
 	int	i;
 	int	y;
 
 	if (argc < 2)
 		return (1);
-	i = argc - 1;
-	while (i > 0)
+	i = 1;
+	while (i < argc)
 	{
-		y = 0;
-		while (argv[i][y])
+		y = i + 1;
+		while (y < argc)
 		{
-			write(1, &argv[i][y], 1);
+			if (ft_strcmp(argv[i], argv[y]) > 0)
+			{
+				ft_swap(&(argv[i]), &(argv[y]));
+			}
 			y++;
 		}
-		write(1, "\n", 1);
-		i--;
+		i++;
+		ft_print_arg(argv[i]);
 	}
+}
+
+void	ft_print_arg(char *arg)
+{
+	int	i;
+
+	i = 0;
+	while (arg[i])
+	{
+		write(1, &arg[i], 1);
+		i++;
+	}
+}
+
+int	ft_strcmp(char *s1, char *s2)
+{
+	int	i;
+
+	i = 0;
+	while (s1[i] && s2[i])
+	{
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+		i++;
+	}
+	return (s1[i] - s2[i]);
 }

@@ -6,14 +6,14 @@
 /*   By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 21:43:45 by tchoquet          #+#    #+#             */
-/*   Updated: 2023/02/22 16:26:05 by tchoquet         ###   ########.fr       */
+/*   Updated: 2023/02/22 17:05:02 by tchoquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_sqrt(int nb)
 {
 	unsigned long	i;
-	unsigned long 	long_nb;
+	unsigned long	long_nb;
 
 	if (nb <= 0)
 		return (0);

@@ -6,19 +6,19 @@
 /*   By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 13:39:43 by tchoquet          #+#    #+#             */
-/*   Updated: 2023/02/22 14:34:49 by tchoquet         ###   ########.fr       */
+/*   Updated: 2023/02/22 14:37:43 by tchoquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<unistd.h>
 
-int main(int argc, char const *argv[])
+int	main(int argc, char const *argv[])
 {
 	int	i;
 	int	y;
+
 	if (argc < 2)
 		return (1);
-
 	i = 1;
 	while (i < argc)
 	{

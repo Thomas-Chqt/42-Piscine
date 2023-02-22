@@ -6,7 +6,7 @@
 /*   By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 22:39:56 by tchoquet          #+#    #+#             */
-/*   Updated: 2023/02/21 22:54:52 by tchoquet         ###   ########.fr       */
+/*   Updated: 2023/02/22 12:43:53 by tchoquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	ft_is_prime(int nb)
 	if (nb % 2 == 0)
 		return (0);
 	i = 3;
-	while (i * i <= nb)
+	while (i <= nb / i)
 	{
 		if (nb % i == 0)
 			return (0);

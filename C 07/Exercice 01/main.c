@@ -6,14 +6,15 @@
 /*   By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 22:10:31 by tchoquet          #+#    #+#             */
-/*   Updated: 2023/02/22 22:32:25 by tchoquet         ###   ########.fr       */
+/*   Updated: 2023/02/23 11:28:01 by tchoquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdio.h>
+#include<limits.h>
 
 int	*ft_range(int min, int max);
-void printArray(int* array, int size);
+void printArray(int* array, unsigned long size);
 
 typedef struct s_testValue TestValue;
 struct s_testValue
@@ -30,31 +31,37 @@ int main()
 	TestValue testValues[] = {
 		{3, 5},
 		{0, 100},
-		{50, 40}
+		{50, 40},
+		{3, 3},
+		{-30, -15}
 	};
 
 	int *range = NULL;
 
-	for (int i = 0; i < 3; i++)
+	for (int i = 0; i < 5; i++)
 	{
 		printf("%d -> %d :\n", testValues[i].min, testValues[i].max);
-		printArray(ft_range(testValues[i].min, testValues[i].max), )
+		range = ft_range(testValues[i].min, testValues[i].max);
+		if (range == NULL)
+			printf("(null)\n\n");
+		else 
+			printArray(range, (long)(testValues[i].max) - (long)(testValues[i].min));
 	}
 	
 
 	return 0;
 }
 
-void printArray(int* array, int size)
+void printArray(int* array, unsigned long size)
 {
 	printf("{ ");
 	if (size > 0)
 	{
 		printf("%d", array[0]);
 	}
-	for (int i = 1; i < size; i++)
+	for (unsigned long i = 1; i < size; i++)
 	{
 		printf(", %d", array[i]);
 	}
-	printf(" }");
+	printf(" }\n\n");
 }

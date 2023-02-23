@@ -6,12 +6,13 @@
 /*   By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 22:10:31 by tchoquet          #+#    #+#             */
-/*   Updated: 2023/02/23 11:28:01 by tchoquet         ###   ########.fr       */
+/*   Updated: 2023/02/23 11:37:16 by tchoquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdio.h>
 #include<limits.h>
+#include<stdlib.h>
 
 int	*ft_range(int min, int max);
 void printArray(int* array, unsigned long size);
@@ -46,6 +47,7 @@ int main()
 			printf("(null)\n\n");
 		else 
 			printArray(range, (long)(testValues[i].max) - (long)(testValues[i].min));
+		free(range);
 	}
 	
 

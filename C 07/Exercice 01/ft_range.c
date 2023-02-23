@@ -6,7 +6,7 @@
 /*   By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 22:10:33 by tchoquet          #+#    #+#             */
-/*   Updated: 2023/02/23 11:22:51 by tchoquet         ###   ########.fr       */
+/*   Updated: 2023/02/23 11:44:05 by tchoquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,10 @@ int	*ft_range(int min, int max)
 
 	if (min >= max)
 		return (NULL);
-	
 	size = (long)max - (long)min;
 	range = malloc(sizeof(int) * size);
+	if (range == NULL)
+		return (NULL);
 	i = 0;
 	while (i < size)
 	{

@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft.h                                               :+:      :+:    :+:   */
+/*   ft_do_op.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/02 19:54:54 by tchoquet          #+#    #+#             */
-/*   Updated: 2023/03/02 22:15:47 by tchoquet         ###   ########.fr       */
+/*   Created: 2023/03/02 20:28:09 by tchoquet          #+#    #+#             */
+/*   Updated: 2023/03/02 22:16:58 by tchoquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_H
-# define FT_H
+#include "ft.h"
 
-# include <unistd.h>
+int	ft_do_op(int a, char op, int b)
+{
+	t_func_ptr	op_array[128];
 
-typedef int	(*t_func_ptr)(int, int);
+	op_array['+'] = &ft_plus;
+	op_array['-'] = &ft_minus;
+	op_array['/'] = &ft_divide;
+	op_array['*'] = &ft_multiply;
+	op_array['%'] = &ft_modulo;
 
-int		ft_plus(int a, int b);
-int		ft_minus(int a, int b);
-int		ft_divide(int a, int b);
-int		ft_multiply(int a, int b);
-int		ft_modulo(int a, int b);
-
-int		ft_do_op(int a, char op, int b);
-
-int		ft_atoi(char *str);
-void	ft_putnbr(int nb);
-
-#endif
+	return (op_array[(int)op](a, b));
+}

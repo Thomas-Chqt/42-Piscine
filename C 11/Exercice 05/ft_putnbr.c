@@ -1,31 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft.h                                               :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/02 19:54:54 by tchoquet          #+#    #+#             */
-/*   Updated: 2023/03/02 22:15:47 by tchoquet         ###   ########.fr       */
+/*   Created: 2023/02/20 21:54:07 by tchoquet          #+#    #+#             */
+/*   Updated: 2023/03/02 22:40:07 by tchoquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_H
-# define FT_H
+#include "ft.h"
 
-# include <unistd.h>
+void	ft_putabnbr(long nb);
 
-typedef int	(*t_func_ptr)(int, int);
+void	ft_putnbr(int nb)
+{
+	long	l_n;
 
-int		ft_plus(int a, int b);
-int		ft_minus(int a, int b);
-int		ft_divide(int a, int b);
-int		ft_multiply(int a, int b);
-int		ft_modulo(int a, int b);
+	l_n = (long)nb;
+	if (l_n < 0)
+	{
+		write(1, "-", 1);
+	}
+	ft_putabnbr(l_n);
+}
 
-int		ft_do_op(int a, char op, int b);
+void	ft_putabnbr(long nb)
+{
+	char	c;
 
-int		ft_atoi(char *str);
-void	ft_putnbr(int nb);
-
-#endif
+	if ((nb / 10) > 0)
+	{
+		ft_putabnbr(nb / 10);
+	}
+	c = (nb % 10) + '0';
+	write(1, &c, 1);
+}

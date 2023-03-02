@@ -1,0 +1,33 @@
+{
+	// See https://go.microsoft.com/fwlink/?LinkId=733558
+	// for the documentation about the tasks.json format
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Rush 01 build debug",
+			"type": "shell",
+			"command": "cc -g -o Debug.out *.c",
+			"problemMatcher": [],
+			"group": "build",
+			"dependsOn": "Save all"
+		},
+		{
+			"label": "Rush 01 build release",
+			"type": "shell",
+			"command": "cc -Wall -Wextra -Werror -o Release.out *.c",
+			"problemMatcher": [],
+			"group": "build",
+			"dependsOn": "Save all"
+		},
+		{
+			"label": "Launch Rush 01",
+			"type": "shell",
+			"command": "./Release.out 4 3 2 1 1 2 2 2 4 3 2 1 1 2 2 2 && rm Release.out",
+			//"command": "./Release.out 9 8 7 6 5 4 3 2 1 1 2 2 2 2 2 2 2 2 9 8 7 6 5 4 3 2 1 1 2 2 2 2 2 2 2 2 && rm Release.out",
+			//"command": "./Release.out 5 5 5 5 5 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 && rm Release.out",
+			"problemMatcher": [],
+			"group": "test",
+			"dependsOn": "Rush 01 build release"
+		}
+	]
+}

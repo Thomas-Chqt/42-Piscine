@@ -1,0 +1,44 @@
+{
+	// See https://go.microsoft.com/fwlink/?LinkId=733558
+	// for the documentation about the tasks.json format
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Standard launch (Rush 02)",
+			"type": "shell",
+			"command": "./Release.out && rm Release.out",
+			"problemMatcher": [],
+			"group": "test",
+			"dependsOn": "Standard build release (Rush 02)"
+		},
+		{
+			"label": "Standard build debug (Rush 02)",
+			"type": "shell",
+			"command": "cc -g -o Debug.out *.c",
+			"problemMatcher": [],
+			"group": "build",
+			"dependsOn": "Save all (Rush 02)"
+		},
+		{
+			"label": "Standard build release (Rush 02)",
+			"type": "shell",
+			"command": "cc -Wall -Wextra -Werror -o Release.out *.c",
+			"problemMatcher": [],
+			"group": "build",
+			"dependsOn": "Save all (Rush 02)"
+		},
+		{
+			"label": "Save all (Rush 02)",
+			"command": "${command:workbench.action.files.saveAll}",
+			"type": "shell",
+			"problemMatcher": []
+		},
+		{
+			"label": "norminette current file (Rush 02)",
+			"type": "shell",
+			"command": "norminette '${file}'",
+			"dependsOn": "Save all",
+			"problemMatcher": []
+		}
+	]
+}

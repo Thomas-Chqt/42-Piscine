@@ -1,0 +1,17 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+	{
+		"label": "Build debug Rush 00",
+		"type": "shell",
+		"command": "cc -g -Wall -Wextra -Werror -o Exe.out *.c"
+	},
+	{
+		"label": "Build release Rush 00",
+		"type": "shell",
+		"command": "cc -Wall -Wextra -Werror -o Exe.out *.c"
+	}
+]
+}

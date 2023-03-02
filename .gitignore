@@ -2,7 +2,7 @@
 *.out
 *.dSYM
 Git\ repo*
-Rush*
 C\ Checker/*
 C\ Checker*
 *.o
+rush-02

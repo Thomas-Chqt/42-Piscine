@@ -1,0 +1,36 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+	{
+		"label": "Build debug",
+		"type": "shell",
+		"command": "cc -g -Wall -Wextra -Werror -o Exe.out *.c",
+		"group": "build",
+		"dependsOn": "Save all"
+	},
+	{
+		"label": "Build release",
+		"type": "shell",
+		"command": "cc -Wall -Wextra -Werror -o Exe.out *.c",
+		"problemMatcher": [],
+		"group": {
+			"kind": "build",
+			"isDefault": true
+		},
+		"dependsOn": "Save all"
+	},
+	{
+		"label": "Launch",
+		"type": "shell",
+		"command": "./Exe.out",
+		"args": [
+			"0",
+			"-1"
+		],
+		"group": "test",
+		"dependsOn": "Build release"
+	}
+]
+}

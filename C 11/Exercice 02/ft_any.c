@@ -1,39 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_any.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/02 16:23:27 by tchoquet          #+#    #+#             */
-/*   Updated: 2023/03/02 19:20:29 by tchoquet         ###   ########.fr       */
+/*   Created: 2023/03/02 19:07:14 by tchoquet          #+#    #+#             */
+/*   Updated: 2023/03/02 19:20:48 by tchoquet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include <stdlib.h>
 
-int	ft_any(char **tab, int (*f)(char*));
-
-int ft_strlen(char *str)
+int	ft_any(char **tab, int (*f)(char*))
 {
-	int res = (int)strlen(str);
-	return (res);
+	int	i;
+
+	i = 0;
+	while (tab[i] != NULL)
+	{
+		if (f(tab[i]) != 0)
+			return (1);
+		i++;
+	}
+	return (0);
 }
-
-int main()
-{
-	char *array[] = {
-		"",
-		"",
-		"f",
-		NULL
-	};
-
-	int res = ft_any(array, &ft_strlen);
-
-	printf("%d\n", res);
-
-	return 0;
-}
-

@@ -5,6 +5,7 @@ Git\ repo*
 C\ Checker/*
 C\ Checker*
 *.o
+*.a
 rush-02
 Repo*
 repo*

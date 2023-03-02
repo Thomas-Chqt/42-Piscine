@@ -6,7 +6,7 @@
 #    By: tchoquet <tchoquet@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/02 13:19:00 by tchoquet          #+#    #+#              #
-#    Updated: 2023/03/02 14:06:31 by tchoquet         ###   ########.fr        #
+#    Updated: 2023/03/02 15:30:52 by tchoquet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,16 +16,13 @@ SRCS_NAMES 		=	ft_putchar.c	\
 					ft_strlen.c		\
 					ft_swap.c
 
-RACINE 			= .
-SRCS_DIR 		= ${RACINE}/srcs
-INCLUDES_DIR 	= ${RACINE}/includes
-BUILD_DIR		= ${SRCS_DIR}/srcs
-PRODUCT_DIR		= ${RACINE}
+SRCS_DIR 		= srcs
+INCLUDES_DIR 	= includes
 
 SRCS			= ${foreach file, ${SRCS_NAMES}, ${SRCS_DIR}/${file}}
 OBJS			= ${SRCS:.c=.o}
 
-CC				= cc
+CC				= gcc
 CFLAGS			= -Wall -Wextra -Werror
 
 NAME			= libft.a
@@ -35,10 +32,11 @@ NAME			= libft.a
 all: ${NAME}
 
 ${NAME}: ${OBJS}
-	ar rcs $@ $^
+	ar rc $@ $^
+	ranlib $@
 
-${BUILD_DIR}/%.o: ${SRCS_DIR}/%.c
-	${CC} -o $@ -c $< ${CFLAGS} -I ${INCLUDES_DIR}
+%.o: %.c
+	${CC} ${CFLAGS} -o $@ -c $<  -I ${INCLUDES_DIR}
 
 clean:
 	rm -rf ${OBJS}
